@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PackageId>IEnterprise.Easy-Http</PackageId>
+    <PackageVersion>1.0</PackageVersion>
+    <Authors>IEnterprise: Nikolay Hristov</Authors>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Owners>IEnterprise</Owners>
+    <Copyright>Copyright 2018 (c) IEnterprise Ltd. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/IEnterprise/Easy-HTTP</PackageProjectUrl>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <Summary>Make HTTP Requests easier, using a generic builder pattern and options for customizations.</Summary>
+    <PackageTags>http https easy easy-http requests rest request api ienterprise</PackageTags>
+    <Title>Easy HTTP</Title>
+    <Description>Make HTTP Requests easier, using a generic builder pattern and options for customizations.</Description>
+    <ReleaseVersion>1.0</ReleaseVersion>
+    <PackageLicenseUrl>https://github.com/IEnterprise/Easy-HTTP/blob/master/LICENSE</PackageLicenseUrl>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+</Project>
