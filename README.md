@@ -1,6 +1,6 @@
 ## Why?
 
-Easy-HTTP will make your life easier when calling Rest APIs. The library full or partial class parsing, Json and Form-Data support as well as full customization if needed.
+Easy-HTTP will make your life easier when calling Rest APIs. The library supports full or partial class parsing, Json and Form-Data support as well as full customization if needed.
 
 ## Platform
 
