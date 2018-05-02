@@ -55,6 +55,25 @@ await new RequestBuilder<ExampleObject>()
 ```
 > In order to use "Partial Parsing" the model has to have the \[EndpotinContract(PutInRequest=true)] attribute on the required properties 
 
+### Adding Headers
+```
+await new RequestBuilder<ExampleObject>()
+.SetHost("https://httpbin.org")
+.AddHeader(x => x.Accept_Encoding, "UTF-8")
+.AddHeader(x => x.Authorization, "Bearer XXXXXXXXXXXXXXXXX")
+.Build()
+.Execute();
+```
+
+### Custom Headers
+```
+await new RequestBuilder<ExampleObject>()
+.SetHost("https://httpbin.org")
+.AddHeader("Custom-Header", "Header Value")
+.Build()
+.Execute();
+```
+
 
 ### Default parameters
 - "checkForAttribute" is set to "false"
