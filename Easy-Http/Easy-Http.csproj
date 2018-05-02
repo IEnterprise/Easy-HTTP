@@ -9,7 +9,7 @@
     <Owners>IEnterprise</Owners>
     <Copyright>Copyright 2018 (c) IEnterprise Ltd. All rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/IEnterprise/Easy-HTTP</PackageProjectUrl>
-    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <PackageReleaseNotes>Added header support, fixed bug with query</PackageReleaseNotes>
     <Summary>Make HTTP Requests easier, using a generic builder pattern and options for customizations.</Summary>
     <PackageTags>http https easy easy-http requests rest request api ienterprise</PackageTags>
     <Title>Easy HTTP</Title>
@@ -19,6 +19,7 @@
     <DevelopmentDependency>true</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -33,6 +33,14 @@ namespace Easy_Http.Helpers
             return type.GetProperties().Where(f => f.GetAttributes<A>(false).Any(funcToSearch));
         }
 
+        public static void SetHeaders(this HttpClient client, Dictionary<string, string> headers)
+        {
+            foreach (var header in headers.Keys)
+            {
+                client.DefaultRequestHeaders.Add(header, headers[header]);
+            }
+        }
+
         public static async System.Threading.Tasks.Task<MultipartFormDataContent> ParseObjectAsync<Model>(this MultipartFormDataContent content, Model model)
             where Model : class
         {

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>IEnterprise.Easy-Http</id>
-    <version>1.0</version>
+    <version>1.1.1</version>
     <title>Easy-Http</title>
     <authors>IEnterprise: Nikolay Hristov</authors>
     <owners>IEnterprise</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/IEnterprise/Easy-HTTP</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Make HTTP Requests easier, using a generic builder pattern and options for customizations</description>
-    <releaseNotes>First release</releaseNotes>
+    <releaseNotes>Header expressions</releaseNotes>
     <copyright>Copyright 2018 (c) IEnterprise Ltd. All rights reserved.</copyright>
     <tags>http https easy easy-http requests rest request api ienterprise</tags>
         <dependencies>
@@ -22,6 +22,6 @@
   </metadata>
 
   <files>
-    <file src="/Projects/Easy-HTTP/Easy-Http/Easy-Http/bin/Release/netcoreapp2.0/Easy-Http.dll" target="lib/netcoreapp2.0/Easy-Http.dll" />
+    <file src="C:\D\projects\Easy-Http2\Easy-Http\bin\Release\netcoreapp2.0\Easy-Http.dll" target="lib/netcoreapp2.0/Easy-Http.dll" />
   </files>
 </package>

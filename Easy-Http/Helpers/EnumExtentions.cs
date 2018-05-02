@@ -11,5 +11,10 @@ namespace Easy_Http.Helpers
 
             return Enum.GetName(typeof(T), enumValue);
         }
+
+        public static string GetHeader(this Headers enumValue)
+        {
+            return Enum.GetName(typeof(Headers), enumValue).Replace("_", "-").Replace("__", " ");
+        }
     }
 }

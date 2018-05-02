@@ -3,6 +3,8 @@ using Microsoft.Win32.SafeHandles;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
@@ -19,7 +21,8 @@ namespace Easy_Http.Builders
                 .SetHost(this.host)
                 .SetQuery(this.querryBuilder.GetQuery())
                 .SetType(this.Type)
-                .SetContent(this.CreateContent());
+                .SetContent(this.CreateContent())
+                .SetHeaders(this.headers);
             this.Dispose();
 
             return request;
@@ -46,6 +49,9 @@ namespace Easy_Http.Builders
         protected bool checkForAttribute;
 
         protected string host;
+        protected Dictionary<string, string> headers = new Dictionary<string, string>();
+
+        protected HeadersBuffer headerBuffer = new HeadersBuffer();
 
         bool disposed = false;
         SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
@@ -122,6 +128,17 @@ namespace Easy_Http.Builders
             return (RBuilder)this;
         }
 
+        public RBuilder AddHeader(Expression<Func<HeadersBuffer, Headers>> expr, string value)
+        {
+            headers.Add(expr.Compile().Invoke(this.headerBuffer).GetEnumName(),value);
+            return (RBuilder)this;
+        }
+        public RBuilder AddHeader(string header, string value)
+        {
+            headers.Add(header, value);
+            return (RBuilder)this;
+        }
+
         public RBuilder SetModelToSerialize(Model model, bool checkForAttribute = false)
         {
             this.model = model;
@@ -178,7 +195,7 @@ namespace Easy_Http.Builders
 
         public QBuilder SetQuery(string query)
         {
-            this.query = query + "?";
+            this.query = "?" + query;
             return (QBuilder)this;
         }
 
@@ -203,7 +220,7 @@ namespace Easy_Http.Builders
 
         public string GetQuery()
         {
-            return this.query;
+            return this.query.Length > 1 ? this.query : string.Empty;
         }
 
         public void Dispose()
